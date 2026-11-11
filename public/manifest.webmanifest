@@ -1,0 +1,22 @@
+{
+    "name": "Treinr — treino e alimentação",
+    "short_name": "Treinr",
+    "description": "Seus treinos, sua alimentação e sua evolução em um só lugar.",
+    "lang": "pt-BR",
+    "id": "/dashboard",
+    "start_url": "/dashboard",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#2b2b2b",
+    "theme_color": "#2b2b2b",
+    "icons": [
+        { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+        { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "shortcuts": [
+        { "name": "Treinos", "url": "/workouts", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+        { "name": "Alimentação", "url": "/diary", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+    ]
+}

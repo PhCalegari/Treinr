@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans:
+        Montserrat, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-success: var(--success);
+    --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer utilities {
+    body,
+    html {
+        --font-sans:
+            'Montserrat', ui-sans-serif, system-ui, sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+            'Noto Color Emoji';
+    }
+}
+
+/* Tema Treinr: grafite + amarelo. O escuro é o padrão. */
+:root {
+    --background: #f3f3f1;
+    --foreground: #1c1c1c;
+    --card: #ffffff;
+    --card-foreground: #1c1c1c;
+    --popover: #ffffff;
+    --popover-foreground: #1c1c1c;
+    --primary: #f5c518;
+    --primary-foreground: #1a1a1a;
+    --secondary: #e8e8e5;
+    --secondary-foreground: #1c1c1c;
+    --muted: #ecece9;
+    --muted-foreground: #5f5f5c;
+    --accent: #ecece9;
+    --accent-foreground: #1c1c1c;
+    --destructive: #d03b3b;
+    --destructive-foreground: #ffffff;
+    --success: #2e9d3a;
+    --border: #dcdcd8;
+    --input: #d2d2ce;
+    --ring: #b58900;
+    --chart-1: #b58900;
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+    --radius: 1rem;
+    --sidebar-background: #ffffff;
+    --sidebar-foreground: #2b2b2b;
+    --sidebar-primary: #f5c518;
+    --sidebar-primary-foreground: #1a1a1a;
+    --sidebar-accent: #f1f1ee;
+    --sidebar-accent-foreground: #1c1c1c;
+    --sidebar-border: #e3e3df;
+    --sidebar-ring: #b58900;
+    --sidebar: #ffffff;
+    /* Desenho dos músculos */
+    --muscle-body: #d9d9d5;
+    --muscle-idle: #c4c4bf;
+    --muscle-line: #b0b0aa;
+    --muscle-active: #e0b000;
+    --muscle-secondary: #f0d77a;
+}
+.dark {
+    --background: #2b2b2b;
+    --foreground: #f2f2f2;
+    --card: #363636;
+    --card-foreground: #f2f2f2;
+    --popover: #3a3a3a;
+    --popover-foreground: #f2f2f2;
+    --primary: #f5c518;
+    --primary-foreground: #1a1a1a;
+    --secondary: #444444;
+    --secondary-foreground: #f2f2f2;
+    --muted: #3f3f3f;
+    --muted-foreground: #b4b4b0;
+    --accent: #444444;
+    --accent-foreground: #f2f2f2;
+    --destructive: #e66767;
+    --destructive-foreground: #ffffff;
+    --success: #4cbb5a;
+    --border: #4a4a4a;
+    --input: #555555;
+    --ring: #f5c518;
+    --chart-1: #c98500;
+    --chart-2: hsl(160 60% 45%);
+    --chart-3: hsl(30 80% 55%);
+    --chart-4: hsl(280 65% 60%);
+    --chart-5: hsl(340 75% 55%);
+    --sidebar-background: #232323;
+    --sidebar-foreground: #e6e6e6;
+    --sidebar-primary: #f5c518;
+    --sidebar-primary-foreground: #1a1a1a;
+    --sidebar-accent: #363636;
+    --sidebar-accent-foreground: #f5c518;
+    --sidebar-border: #3a3a3a;
+    --sidebar-ring: #f5c518;
+    --sidebar: #232323;
+    /* Desenho dos músculos */
+    --muscle-body: #454545;
+    --muscle-idle: #5c5c5c;
+    --muscle-line: #262626;
+    --muscle-active: #f5c518;
+    --muscle-secondary: #9c7f12;
+}
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Gráficos: uma série (amarelo), grade e eixos discretos. Valores validados para fundo claro e escuro. */
+:root {
+    --viz-series: #b58900;
+    --viz-grid: #e3e3df;
+    --viz-axis: #c3c2b7;
+    --viz-muted: #898781;
+    --viz-ref: #52514e;
+}
+.dark {
+    --viz-series: #c98500;
+    --viz-grid: #4a4a4a;
+    --viz-axis: #5a5a5a;
+    --viz-muted: #898781;
+    --viz-ref: #c3c2b7;
+}
